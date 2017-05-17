@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Tasks</title>
+  <link rel="stylesheet" href="styles/bootstrap.css"/>
+  <link rel="stylesheet" href="styles/font-awesome.min.css">
+  <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <form id="myForm" onsubmit="return sendData(this)">
+        <div class="row">
+          <div class="col-12">
+            <label>
+              Email
+              <input name="email" type="email" placeholder="example@mail.ru">
+            </label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <div class="phones">
+              <label>
+                Phone-1
+                <input name="phone" type="text">
+                <i onclick="removePhone($(this).parent())" class="fa fa-times" aria-hidden="true"></i>
+              </label>
+              <label>
+                Phone-2
+                <input name="phone" type="text">
+                <i onclick="removePhone($(this).parent())" class="fa fa-times" aria-hidden="true"></i>
+              </label>
+              <i onclick="addPhone()" class="add fa fa-plus-square-o" aria-hidden="true"></i>
+            </div>
+          </div>
+        </div>
+        <button type="submit">Send</button>
+      </form>
+    </div>
+  </div>
+  <div class="row" style="padding-top: 40px">
+    <div class="col-12">
+      <h5>Задание-1</h5>
+      <p>
+        Перенести иконку "х"(удалить) в правый верхний угол поля для ввода телефона
+      </p>
+      <h5>Задание-2</h5>
+      <p>
+        Релизовать добавление и удаление телефона в форме. Всегда должен оставаться минимум один телефон.
+      </p>
+      <h5>Задание-3</h5>
+      <div>
+        При клике на кнопку "Send", в консоль должны выводиться данные формы в JSON-формате.<br>
+        Пример:<br>
+        <pre>
+          {
+            "email": "myemail@mail.ru",
+            "phones": ["1111", "222", "333"]
+          }
+        </pre>
+    </div>
+  </div>
+</div>
+<script src="js/jquery-3.2.1.min.js"></script>
+<script src="js/tether.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
