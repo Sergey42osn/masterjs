@@ -6,44 +6,36 @@ $(document).ready( function() {
 function sendData(form) {
 
 		var phones =[];
-		var arrayform ={};
+		var objform ={};
 
 		for (var i = 0; i < form.length -1; i++) {
 			if(form[i].name == "email"){
-				//alert(form[i].value);
-				arrayform["email"] = form[i].value;
-				//alert(JSON.stringify(arrayform));
+
+				objform["email"] = form[i].value;
+
 			}else{
 				phones.push(form[i].value);
-				//alert(JSON.stringify(phones));	
+			
 			}
 		}
-		arrayform["phones"] = phones;
-		console.log(JSON.stringify(arrayform));
+		objform["phones"] = phones;
+		console.log(JSON.stringify(objform));
 	    //console.log('form = ', JSON.stringify($(form).serializeArray()));
 	    return false
 	}
 
 	function addPhone(phone) {
 
-        $( ".add" ).before( 
-        '<label>phone-$ :' +
-        '<input name="phone" type="text"> '   +  
-        '<i onclick="removePhone($(this).parent())" class="fa fa-times" aria-hidden="true"></i>'    +
-        '</label>'                  
-        );
+		$(phone[0]).clone().prependTo(".phones");
 
-          //console.log('add Phone');
-      //    ...
       }
 
 	function removePhone(phone) {
 	    //console.log('Remove phone -->', phone);
 
-	    var NumberofElements;
-	    NumberofElements = $('.phones').children().length;
+	    var numPhones = $('input[name=phone]').length;
 
-	    if(NumberofElements != 2){
+	    if(numPhones != 1){
 	     phone.remove();
 	   }
 

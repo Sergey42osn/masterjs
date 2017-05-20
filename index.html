@@ -33,7 +33,7 @@
                 <input name="phone" type="text">
                 <i onclick="removePhone($(this).parent())" class="fa fa-times" aria-hidden="true"></i>
               </label>
-              <i onclick="addPhone()" class="add fa fa-plus-square-o" aria-hidden="true"></i>
+              <i onclick="addPhone($('.fa-times').parent())" class="add fa fa-plus-square-o" aria-hidden="true"></i>
             </div>
           </div>
         </div>
